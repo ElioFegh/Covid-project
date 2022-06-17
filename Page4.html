@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Impact of CoronaVirus</title>
+<style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+	text-align: left;
+	
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #42413C;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+}
+
+/* ~~ this fixed width container surrounds all other divs ~~ */
+.container {
+	width: 960px;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+	overflow: hidden; /* this declaration makes the .container understand where the floated columns within ends and contain them */
+	background-image: url(backgroundimg.jpg);
+}
+
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the right instead of the left, simply float these columns the opposite direction (all right instead of all left) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+.sidebar1 {
+	float: left;
+	width: 180px;
+	background-color: #C6D580 ;
+	padding-bottom: 10px;
+}
+.content {
+	padding: 10px 0;
+	width: 780px;
+	float: left;
+	background-image: url(backgroundimg.jpg);
+}
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+/* ~~ The navigation list styles (can be removed if you choose to use a premade flyout menu like Spry) ~~ */
+ul.nav {
+	list-style: none; /* this removes the list marker */
+	border-top: 1px solid #666; /* this creates the top border for the links - all others are placed using a bottom border on the LI */
+	margin-bottom: 15px; /* this creates the space between the navigation on the content below */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* this creates the button separation */
+}
+ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+	padding: 5px 5px 5px 15px;
+	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+	text-decoration: none;
+	background-color: #C6D580;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+	background-color: #ADB96E;
+	color: #FFF;
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the overflow:hidden on the .container is removed */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+h1 {
+	text-align: center;
+	color: #999;
+}
+h2 {
+	text-align: center;
+	color: #C60;
+}
+h3 {
+	text-align: center;
+	color: #060;
+}
+h4 {
+	text-align: center;
+}
+.image {
+}
+.container .content .ipl {
+	color: #60F;
+}
+-->
+</style>
+<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="sidebar1">
+    <ul class="nav">
+   <li><a href="index.html">Coronavirus</a></li>
+      <li><a href="Page1.html">SARS</a></li>
+      <li><a href="index.html">Covid19</a></li>
+      <li><a href="index.html">Causes</a></li>
+      <li><a href="index.html">Protective Measures</a></li>
+      <li><a href="Page2.html">Importance of Hygiene</a></li>
+      <li><a href="Page3.html">Countries Behavior</a></li>
+       <li><a href="Page4.html">Impact of the virus</a></li>
+    </ul>
+  </div> 
+  <div class="content">
+    <h1 class="h1">Impact of Covid 19    </h1>
+    <h2 id="covid19">Impact on Companies and enterprises:</h2>
+    <p>Almost 3 years into the pandemic, nearly every business in the world has been affected by COVID-19, but performance has varied widely, even within countries and industries. Data collected through the World Bank firm surveys offer some glimpses into why, and how this may be relevant for policy.</p>
+    <p><img src="companiesLoss.jpeg" width="673" height="1280" alt="companiesloss" /></p>
+    <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <h3>Impact on global education    </h3>
+  <p style="text-align: left">Coronavirus Infectious Disease 2019 (COVID-19) has been one of the <br />
+      most dreaded, recent pandemics impacting multifarious global sectors, <br />
+      including education. To control contagion, affected nations ordered <br />
+      academic campus closures and home-schooling plans. Schools, colleges, <br />
+      and universities underwent a paradigm shift adopting internet-based <br />
+      delivery of lectures, synchronously or asynchronously (recorded), with <br />
+      virtual labs. Medical education suffered significantly; suspending student <br />
+      internships in hospitals decreased practical exposure to clinical <br />
+      specialties, impairing students’ performance, and competency. <br />
+      Teachers of traditional classes, with technical assistance, undertook <br />
+      rigorous trainings to restructure pedagogical and assessment strategies <br />
+      online using web/mobile applications and other digital tools. This could <br />
+      potentially compromise instructional quality, particularly of tertiary <br />
+      education or tactile/experiential subjects, in absence of hands-on <br />
+      resources and live interaction. Lack of network capacity or educational <br />
+      opportunities would discourage socioeconomically challenged, <br />
+      struggling, disabled, or remotely/rurally located students. COVID-19-<br />
+      led isolation impeded numerous students’ attendance, learning and <br />
+    cognition and caused psychological stress or anxiety among students</p>
+  <p><img src="Schooling.png" width="650" height="425" alt="school" /></p>
+    <p>&nbsp;</p>
+    <h3 class="ipl">Impact on People's live</h3>
+    <p><img class="image" src="girlWithMask.jpg" width="526" height="362" alt="girlWithMask" /></p>
+    <p>The current COVID-19 pandemic have affected our daily lifestyle, pressed us with fear of infection, and thereby changed life satisfaction and mental health. The current study investigated influencing cascade of changes during the COVID-19 among the lifestyle, personal attitudes, and life (dis)satisfaction for medical students, using network-based approaches. This cross-sectional survey used self-reports of 454 medical students during June and July of 2020. Depressive mood, anxiety, and intention to drop out of school were observed in 11.9, 18.5, and 38.3% of medical students, respectively. Directed acyclic graph that estimated directional propagation of the COVID-19 in medical students' daily lives initiated from the perception of unexpected event, propagated to nervous and stressed feeling, trouble relaxing, feeling like a failure, and were followed by trouble concentrating, feeling loss of control for situation, and fear of infecting colleagues. These six features were also principal mediators within the intra-individual covariance networks comprised of changed lifestyle, personal attitude, and mental health at COVID-19 pandemic. Psychosocial supports targeting nervousness, trouble relaxing and concentrating, fear of spreading infection to colleagues, feelings of a failure or loss of situational control are required for better mental health of medical students during the COVID-19 pandemic.</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h4>How covid changed our World?</h4>
+    <p>Here is a small video showing us impacts of covid19 on us:</p>
+    <p>&nbsp;</p>
+    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="640" height="360" id="FLVPlayer">
+      <param name="movie" value="FLVPlayer_Progressive.swf" />
+      <param name="quality" value="high" />
+      <param name="wmode" value="opaque" />
+      <param name="scale" value="noscale" />
+      <param name="salign" value="lt" />
+      <param name="FlashVars" value="&amp;MM_ComponentVersion=1&amp;skinName=Clear_Skin_1&amp;streamName=Impact&amp;autoPlay=false&amp;autoRewind=false" />
+      <param name="swfversion" value="8,0,0,0" />
+      <!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
+      <param name="expressinstall" value="Scripts/expressInstall.swf" />
+      <!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
+      <!--[if !IE]>-->
+      <object type="application/x-shockwave-flash" data="FLVPlayer_Progressive.swf" width="640" height="360">
+        <!--<![endif]-->
+        <param name="quality" value="high" />
+        <param name="wmode" value="opaque" />
+        <param name="scale" value="noscale" />
+        <param name="salign" value="lt" />
+        <param name="FlashVars" value="&amp;MM_ComponentVersion=1&amp;skinName=Clear_Skin_1&amp;streamName=Impact&amp;autoPlay=false&amp;autoRewind=false" />
+        <param name="swfversion" value="8,0,0,0" />
+        <param name="expressinstall" value="Scripts/expressInstall.swf" />
+        <!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
+        <div>
+          <h4>Content on this page requires a newer version of Adobe Flash Player.</h4>
+          <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
+        </div>
+        <!--[if !IE]>-->
+      </object>
+      <!--<![endif]-->
+    </object>
+<p>&nbsp;</p>
+<p><!-- end .content --> </p>
+  </div>
+  <!-- end .container --></div>
+<script type="text/javascript">
+swfobject.registerObject("FLVPlayer");
+</script>
+</body>
+</html>
